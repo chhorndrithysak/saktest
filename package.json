@@ -1,0 +1,55 @@
+{
+  "name": "premium-app-sale",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium App Sale — marketplace for legally authorized premium app accounts and license keys, with RaksmeyPay payments.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "db:up": "docker compose up -d db",
+    "db:embedded": "tsx scripts/embedded-db.ts",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "keys:generate": "tsx scripts/generate-keys.ts",
+    "cron:release": "tsx scripts/release-reservations.ts",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-khmer": "^5.3.0",
+    "@node-rs/argon2": "2.2.2",
+    "@prisma/client": "6.19.3",
+    "clsx": "2.1.1",
+    "next": "15.5.29",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "server-only": "0.0.1",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@playwright/test": "1.65.1",
+    "@tailwindcss/postcss": "4.3.5",
+    "@types/node": "^22",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "^19",
+    "embedded-postgres": "18.7.0-beta.19",
+    "eslint": "9.39.5",
+    "eslint-config-next": "15.5.29",
+    "prisma": "6.19.3",
+    "tailwindcss": "4.3.5",
+    "tsx": "^4.20.0",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

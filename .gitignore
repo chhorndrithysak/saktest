@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+.embedded-pg/
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets — never commit
+.env
+.env.local
+.env.*.local
+.env.test
+!.env.example
